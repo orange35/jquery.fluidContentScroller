@@ -322,7 +322,16 @@
             e.preventDefault();
             var link = $(e.currentTarget),
                 index = parseInt(link.data('csIndex')),
-                $container, $target, position, positionOffset = 0, scrollTop = 0;
+                $container, $target, position, positionOffset = 0, scrollTop = 0,
+                onComplete;
+
+            if ('function' === typeof this.options.navItem.onBeforeClick) {
+                this.options.navItem.onBeforeClick.call(null, link, $(this.$target[index]));
+            }
+
+            onComplete = ('function' === typeof this.options.navItem.onAfterClick) ? (function (fn, link, target) {
+                return function () { fn.call(null, link, target); };
+            })(this.options.navItem.onAfterClick, link, $(this.$target[index])) : undefined;
 
             if (index in this.$target) {
                 if ((window === this.$scrollContainer[0])) {
@@ -336,7 +345,7 @@
                 position = $target.offset().top - $container.offset().top + scrollTop + positionOffset;
                 $container.animate({
                     scrollTop: position
-                }, this.options.scrollSpeed, this.options.scrollEasing);
+                }, this.options.scrollSpeed, this.options.scrollEasing, onComplete);
             }
         },
 
@@ -404,7 +413,13 @@
         /** @type {undefined|Number} Container scroll easing */
         scrollEasing: undefined,
 
-        /** @type {undefined|Function} Calls after plugin initialization and navigation build */
+        /**
+         * Calls after plugin initialization and navigation build
+         * @type {undefined|Function}
+         * @param {jQuery} target, topNav, bottomNav
+         * @param {jQuery} topNav
+         * @param {jQuery} bottomNav
+         * */
         onInit: undefined,
 
         nav: {
@@ -437,7 +452,23 @@
             duration: 200,
 
             /** @type {Number} Interval between item show/hide effects */
-            effectInterval: 25
+            effectInterval: 25,
+
+            /**
+             * Calls before navigation item click animation
+             * @type {undefined|Function}
+             * @param {jQuery} link
+             * @param {jQuery} target
+             * */
+            onBeforeClick: undefined,
+
+            /**
+             * Calls after navigation item click animation
+             * @type {undefined|Function}
+             * @param {jQuery} link
+             * @param {jQuery} target
+             * */
+            onAfterClick: undefined
         }
     }
 

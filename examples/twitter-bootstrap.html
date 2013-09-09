@@ -182,6 +182,11 @@
             onInit: function (target, top, bottom) {
                 top.find('li').tooltip({ title: tipCallback, container: 'body' });
                 bottom.find('li').tooltip({ title: tipCallback, container: 'body' });
+            },
+            navItem: {
+                onBeforeClick: function (link) {
+                    link.tooltip('hide');
+                }
             }
         });
     });
