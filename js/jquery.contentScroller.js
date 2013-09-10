@@ -1,10 +1,13 @@
-/**
+/*!
+ * jquery.contentScroller
+ *
  * @version 1.0.0
  * @requires jQuery 1.4.2+
  * @copyright Orange35.com, 2013
  * @license Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported
+ * http://creativecommons.org/licenses/by-nc-sa/3.0/
  */
-(function ($) {
+!(function ($) {
     "use strict";
 
     var ContentScroller = function (element, options) {
