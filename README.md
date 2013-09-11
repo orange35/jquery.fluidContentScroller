@@ -1,7 +1,14 @@
-# [jquery.contentScroller](http://orange35.com/plugin/jquery.contentScroller)
+# [jquery.contentScroller](http://orange35.com/jquery.contentScroller)
 
 
 ## Usage
+ * [download](https://github.com/orange35/jquery.contentScroller/archive/master.zip) the plugin,
+ * unzip it and copy files to your website directory,
+ * make sure that you have load jQuery (plugin requires jQuery 1.4.2+, or jQuery 2.x),
+ * include plugin stylesheet and script,
+ * initialize plugin.
+
+### Plugin initialization
 ```
 <link rel="stylesheet" href="css/jquery.contentScroller.css"/>
 
@@ -9,12 +16,12 @@
 <script type="text/javascript" src="js/jquery.contentScroller.js"></script>
 ```
 
-Full screen with default behavior:
+#### Full screen with default behavior
 ```
 $("#content").find("> .post").contentScroller();
 ```
 
-Custom scrollable container with custom title for navigation items:
+#### Custom scrollable container with custom title for navigation items
 ```
 $('#scroll-content').find("> .post").contentScroller({
     container: '#scroll-content',
@@ -24,12 +31,12 @@ $('#scroll-content').find("> .post").contentScroller({
 });
 ```
 
-Custom container and Tooltips with Twitter Bootstrap:
+#### Custom container and Tooltips with Twitter Bootstrap
 ```
 var tipCallback = function () {
     return $('h2:first', $(this).data('csTarget')).text();
 };
-$(".demo-item").contentScroller({
+$('#scroll-content').find('.demo-item').contentScroller({
     container: '#scroll-content',
     onInit: function (target, top, bottom) {
         top.find('li').tooltip({ title: tipCallback });
@@ -38,7 +45,7 @@ $(".demo-item").contentScroller({
 });
 ```
 
-Custom title with WordPress:
+#### Custom title with WordPress
 ```
 var options = {
     navItem: {
