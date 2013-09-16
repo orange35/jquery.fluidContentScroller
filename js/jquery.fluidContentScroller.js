@@ -280,7 +280,7 @@
 
             if (!$.isPlainObject(effect) && typeof effect !== 'string') {
                 effectFn = show ? container.fadeIn : container.fadeOut;
-                effect = this.options.nav.defaultDuration;
+                effect = this.options.nav.duration;
             }
             effectFn.call(container, effect);
         },
@@ -417,18 +417,25 @@
         scrollEasing: undefined,
 
         /**
-         * Calls after plugin initialization and navigation build
+         * Called after plugin initialization and navigation build
          * @type {undefined|Function}
-         * @param {jQuery} target, topNav, bottomNav
+         * @param {jQuery} target
          * @param {jQuery} topNav
          * @param {jQuery} bottomNav
          * */
         onInit: undefined,
 
         nav: {
+            /** @type {String} Class name that added to top and bottom navigation bars */
             className: 'cs-nav',
+
+            /** @type {String} Class name of top navigation bar */
             topClass: 'cs-top',
+
+            /** @type {String} Class name of bottom navigation bar */
             bottomClass: 'cs-bottom',
+
+            /** @type {String} Class name of content wrapper (added when autoWrap = true) */
             wrapClass: 'cs-wrap',
 
             /** @type {undefined|String|Object} Navigation show effect, can be used only when container is not 'body' */
@@ -437,8 +444,8 @@
             /** @type {undefined|String|Object} Navigation hide effect, can be used only when container is not 'body' */
             hideEffect: undefined,
 
-            /** @type {Number} */
-            defaultDuration: 400
+            /** @type {Number} Duration of navigation bar show/hide animation */
+            duration: 400
         },
 
         navItem: {
