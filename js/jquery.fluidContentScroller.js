@@ -1,5 +1,5 @@
 /*!
- * jquery.contentScroller
+ * jquery.fluidContentScroller
  *
  * @version 1.0.0
  * @requires jQuery 1.4.2+
@@ -10,14 +10,14 @@
 !(function ($) {
     "use strict";
 
-    var ContentScroller = function (element, options) {
+    var FluidContentScroller = function (element, options) {
         this.$target = $(element);
         if (this.$target.length === 0) {
             return this;
         }
 
         this.eventNS = 'contentSlider';
-        this.options = $.extend(true, {}, $.fn.contentScroller.defaults, options);
+        this.options = $.extend(true, {}, $.fn.fluidContentScroller.defaults, options);
         /** @type {jQuery} */
         this.$container = $(this.options.container || 'body');
         /** @type {jQuery} */
@@ -43,7 +43,7 @@
         return this;
     };
 
-    ContentScroller.prototype = {
+    FluidContentScroller.prototype = {
         reAttr: /\[([a-z0-9_\-]+)\]/i,
 
         init: function () {
@@ -392,18 +392,18 @@
      * @param {Object} [options]
      * @return {jQuery}
      */
-    $.fn.contentScroller = function (options) {
+    $.fn.fluidContentScroller = function (options) {
         var $this = $(this),
-            data = $this.data('contentScroller');
+            data = $this.data('fluidContentScroller');
         if (!data) {
-            $this.data('contentScroller', (new ContentScroller(this, options)));
+            $this.data('fluidContentScroller', (new FluidContentScroller(this, options)));
         }
         return this;
     };
 
-    $.fn.contentScroller.Constructor = ContentScroller;
+    $.fn.fluidContentScroller.Constructor = FluidContentScroller;
 
-    $.fn.contentScroller.defaults = {
+    $.fn.fluidContentScroller.defaults = {
         /** @type {undefined|String|HtmlElement|jQuery} Scrollable container for navigation (default: 'body') */
         container: undefined,
 

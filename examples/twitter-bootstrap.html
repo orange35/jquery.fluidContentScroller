@@ -4,10 +4,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Twitter Bootstrap Demo :: jquery.contentScroller.js</title>
+    <title>Twitter Bootstrap Demo :: jQuery Fluid Content Scroller</title>
 
     <link rel="stylesheet" href="bootstrap.min.css">
-    <link rel="stylesheet" href="../css/jquery.contentScroller.css">
+    <link rel="stylesheet" href="../css/jquery.fluidContentScroller.css">
     <link rel="stylesheet" href="style.css">
 
     <style type="text/css">
@@ -171,13 +171,13 @@
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
 <script src="bootstrap.min.js"></script>
 
-<script type="text/javascript" src="../js/jquery.contentScroller.js"></script>
+<script type="text/javascript" src="../js/jquery.fluidContentScroller.js"></script>
 <script type="text/javascript">
     $(function () {
         var tipCallback = function () {
             return $('h2:first', $(this).data('csTarget')).text();
         };
-        $(".demo-item").contentScroller({
+        $(".demo-item").fluidContentScroller({
             container: '#scroll-content',
             onInit: function (target, top, bottom) {
                 top.find('li').tooltip({ title: tipCallback, container: 'body' });
