@@ -28,14 +28,14 @@ list.
 <script type="text/javascript" src="js/jquery.fluidContentScroller.js"></script>
 ```
 
-#### Example of the Full Screen mode with default behaviour plugin inizialization
-[View Demo](examples/full-screen.html)
+#### [Example of the Full Screen mode with default behaviour plugin initialization](examples/full-screen.html)
+[View Demo](http://demo.orange35.com/jquery.fluidContentScroller/)
 ```
 $("#content").find("> .post").fluidContentScroller();
 ```
 
-#### Example of the Custom Container with custom navigation tab labels plugin inizialization
-[View Demo](examples/custom-container.html)
+#### [Example of the Custom Container with custom navigation tab labels plugin initialization](examples/custom-container.html)
+[View Demo](http://demo.orange35.com/jquery.fluidContentScroller/custom-container)
 ```
 $('#scroll-content').find("> .post").fluidContentScroller({
     container: '#scroll-content',
@@ -45,8 +45,8 @@ $('#scroll-content').find("> .post").fluidContentScroller({
 });
 ```
 
-#### Example of the Custom Container with Twitter Bootstrap tootips plugin inizialization
-[View Demo](examples/twitter-bootstrap.html)
+#### [Example of the Custom Container with Twitter Bootstrap tootips plugin initialization](examples/twitter-bootstrap.html)
+[View Demo](http://demo.orange35.com/jquery.fluidContentScroller/twitter-bootstrap)
 ```
 $(function () {
     var tipCallback = function () {
