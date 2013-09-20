@@ -7,6 +7,7 @@
  */
 .cs-wrap {
     position: relative;
+    overflow: hidden;
 }
 
 .cs-nav {
@@ -14,6 +15,7 @@
     overflow: hidden;
     left: 0;
     z-index: 1000;
+    -webkit-transform:translateZ(0);
     width: 100%;
     height: 44px; /* Should match .cs-wrap top/bottom padding */
     box-sizing: border-box;
