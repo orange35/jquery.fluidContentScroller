@@ -407,13 +407,13 @@
         /** @type {undefined|String|HtmlElement|jQuery} Scrollable container for navigation (default: 'body') */
         container: undefined,
 
-        /** @type {Boolean} Adds wrapper around container, can be used only when container is not 'body' */
+        /** @type {Boolean} Adds a wrapper around the container; can be used only when container is not 'body' */
         autoWrap: true,
 
-        /** @type {Number} Duration of container scroll after click on navigation item */
+        /** @type {Number} Scrolling duration after a click on navigation tab */
         scrollSpeed: 750,
 
-        /** @type {undefined|String} Container scroll easing */
+        /** @type {undefined|String} Container scroll easing function */
         scrollEasing: undefined,
 
         /**
@@ -426,36 +426,36 @@
         onInit: undefined,
 
         nav: {
-            /** @type {String} Class name that added to top and bottom navigation bars */
+            /** @type {String} Class name that gets added to the top and the bottom navigation bars */
             className: 'cs-nav',
 
-            /** @type {String} Class name of top navigation bar */
+            /** @type {String} Class name of the top navigation bar */
             topClass: 'cs-top',
 
-            /** @type {String} Class name of bottom navigation bar */
+            /** @type {String} Class name of the bottom navigation bar  */
             bottomClass: 'cs-bottom',
 
             /** @type {String} Class name of content wrapper (added when autoWrap = true) */
             wrapClass: 'cs-wrap',
 
-            /** @type {undefined|String|Object} Navigation show effect, can be used only when container is not 'body' */
+            /** @type {undefined|String|Object} Navigation show effect; can be used only when container is not 'body' */
             showEffect: undefined,
 
-            /** @type {undefined|String|Object} Navigation hide effect, can be used only when container is not 'body' */
+            /** @type {undefined|String|Object} Navigation hide effect; can be used only when container is not 'body' */
             hideEffect: undefined,
 
-            /** @type {Number} Duration of navigation bar show/hide animation */
+            /** @type {Number} Duration of the show/hide animation for navigation bar */
             duration: 400
         },
 
         navItem: {
-            /** @type {undefined|String|Function} Source for navigation item title ex. "[data-cs-title]" */
+            /** @type {undefined|String|Function} Source for navigation item title (example "[data-cs-title]") */
             title: undefined,
 
-            /** @type {Function} Show Effect Callback */
+            /** @type {Function} Show effect callback */
             showEffect: $.fn.fadeIn,
 
-            /** @type {Function} Show Effect Callback */
+            /** @type {Function} Hide effect callback */
             hideEffect: $.fn.fadeOut,
 
             /** @type {Number} Items show/hide effect duration */
@@ -465,7 +465,7 @@
             effectInterval: 25,
 
             /**
-             * Calls before navigation item click animation
+             * Called before navigation item click animation
              * @type {undefined|Function}
              * @param {jQuery} link
              * @param {jQuery} target
@@ -473,7 +473,7 @@
             onBeforeClick: undefined,
 
             /**
-             * Calls after navigation item click animation
+             * Called after navigation item click animation
              * @type {undefined|Function}
              * @param {jQuery} link
              * @param {jQuery} target

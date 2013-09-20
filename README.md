@@ -69,30 +69,30 @@ $(function () {
 
 ### Available Options
 
-You can pass these options as key/value object to fluidContentScroller() method.  
+You can pass these options as key/value objects to the fluidContentScroller() method.
 It is also possible to modify defaults directly at $.fn.fluidContentScroller.defaults.
 
 **Name**                    | **Description**
 ---                         | ---
 **container**               | Scrollable container for navigation<br>Type: *{undefined&#124;String&#124;HtmlElement&#124;jQuery}*<br>Default: `document.body`
-**autoWrap**                | Adds wrapper around container, can be used only when container is not `document.body`<br>Type: *{Boolean}*<br> Default: `true`
-**scrollSpeed**             | Duration of container scroll after click on navigation item<br>Type: *{Number}*<br>Default: 750
-**scrollEasing**            | Container scroll easing<br>Type: *{undefined&#124;String}*<br>Default: `undefined`
+**autoWrap**                | Adds a wrapper around the container; can be used only when container is not 'body'<br>Type: *{Boolean}*<br> Default: `true`
+**scrollSpeed**             | Scrolling duration after a click on navigation tab<br>Type: *{Number}*<br>Default: 750
+**scrollEasing**            | Container scroll easing function<br>Type: *{undefined&#124;String}*<br>Default: `undefined`
 **onInit**                  | Called after plugin initialization and navigation build<br>Type: *{Function}*<br>Params: *{jQuery} target, {jQuery} topNav, {jQuery} bottomNav*<br>Default: `undefined`
-**nav.className**           | Class name that added to top and bottom navigation bars <br>Type: *{String}*<br>Default: `'cs-nav'`
-**nav.topClass**            | Class name of top navigation bar <br>Type: *{String}*<br>Default: `'cs-top'`
-**nav.bottomClass**         | Class name of bottom navigation bar <br>Type: *{String}*<br>Default: `'cs-bottom'`
+**nav.className**           | Class name that gets added to the top and the bottom navigation bars<br>Type: *{String}*<br>Default: `'cs-nav'`
+**nav.topClass**            | Class name of the top navigation bar<br>Type: *{String}*<br>Default: `'cs-top'`
+**nav.bottomClass**         | Class name of the bottom navigation bar<br>Type: *{String}*<br>Default: `'cs-bottom'`
 **nav.wrapClass**           | Class name of content wrapper (added when autoWrap = true) <br>Type: *{String}*<br>Default: `'cs-wrap'`
-**nav.showEffect**          | Navigation show effect, can be used only when container is not 'body' <br>Type: *{undefined&#124;String&#124;Object}*<br>Default: `undefined`
-**nav.hideEffect**          | Navigation hide effect, can be used only when container is not 'body' <br>Type: *{undefined&#124;String&#124;Object}*<br>Default: `undefined`
-**nav.duration**            | Duration of navigation bar show/hide animation<br>Type: *{Number}*<br> Default: `400`
-**navItem.title**           | Source for navigation item title ex. "[data-cs-title]" <br>Type: *{undefined&#124;String&#124;Function}*<br>Default: `undefined`
-**navItem.showEffect**      | Show Effect Callback <br>Type: *{Function}*<br>Default: `$.fn.fadeIn`
-**navItem.hideEffect**      | Show Effect Callback <br>Type: *{Function}*<br>Default: `$.fn.fadeOut`
+**nav.showEffect**          | Navigation show effect; can be used only when container is not 'body'<br>Type: *{undefined&#124;String&#124;Object}*<br>Default: `undefined`
+**nav.hideEffect**          | Navigation hide effect; can be used only when container is not 'body'<br>Type: *{undefined&#124;String&#124;Object}*<br>Default: `undefined`
+**nav.duration**            | Duration of the show/hide animation for navigation bar<br>Type: *{Number}*<br> Default: `400`
+**navItem.title**           | Source for navigation item title (example "[data-cs-title]")<br>Type: *{undefined&#124;String&#124;Function}*<br>Default: `undefined`
+**navItem.showEffect**      | Show effect callback<br>Type: *{Function}*<br>Default: `$.fn.fadeIn`
+**navItem.hideEffect**      | Hide effect callback<br>Type: *{Function}*<br>Default: `$.fn.fadeOut`
 **navItem.duration**        | Items show/hide effect duration<br>Type: *{Number}*<br>Default: `200`
 **navItem.effectInterval**  | Interval between item show/hide effects<br>Type: *{Number}*<br>Default: `25`
-**onBeforeClick**           | Calls before navigation item click animation<br>Type: *{undefined&#124;Function}*<br>Params: *{jQuery} link, {jQuery} target*<br>Default: `undefined`
-**onAfterClick**            | Calls after navigation item click animation<br>Type: *{undefined&#124;Function}*<br>Params: *{jQuery} link, {jQuery} target*<br>Default: `undefined`
+**onBeforeClick**           | Called before navigation item click animation<br>Type: *{undefined&#124;Function}*<br>Params: *{jQuery} link, {jQuery} target*<br>Default: `undefined`
+**onAfterClick**            | Called after navigation item click animation<br>Type: *{undefined&#124;Function}*<br>Params: *{jQuery} link, {jQuery} target*<br>Default: `undefined`
 
 
 ## Changelog
