@@ -152,21 +152,28 @@
 <script type="text/javascript" src="../js/jquery.fluidContentScroller.js"></script>
 <script type="text/javascript">
     $(function () {
-        var tipCallback = function () {
-            return $('h2:first', $(this).data('csTarget')).text();
-        };
-        $(".demo-item").fluidContentScroller({
-            container: '#scroll-content',
-            onInit: function (target, top, bottom) {
-                top.find('li').tooltip({ title: tipCallback, container: 'body' });
-                bottom.find('li').tooltip({ title: tipCallback, container: 'body' });
-            },
-            navItem: {
-                onBeforeClick: function (link) {
-                    link.tooltip('hide');
+        var mobile = /Android|iPad|iPod|iPhone/.test(navigator.userAgent);
+        if (mobile) {
+            $(".demo-item").fluidContentScroller({
+                container: '#scroll-content'
+            });
+        } else {
+            var tipCallback = function () {
+                return $('h2:first', $(this).data('csTarget')).text();
+            };
+            $(".demo-item").fluidContentScroller({
+                container: '#scroll-content',
+                onInit: function (target, top, bottom) {
+                    top.find('li').tooltip({ title: tipCallback, container: 'body' });
+                    bottom.find('li').tooltip({ title: tipCallback, container: 'body' });
+                },
+                navItem: {
+                    onBeforeClick: function (link) {
+                        link.tooltip('hide');
+                    }
                 }
-            }
-        });
+            });
+        }
     });
 </script>
 

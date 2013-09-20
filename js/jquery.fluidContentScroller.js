@@ -386,6 +386,15 @@
 
     };
 
+    var isBrowserSupported = function () {
+        var ua = navigator.userAgent, match;
+        // do not initialize plugin on unsupported browsers (Android Browser on Android < 4.1)
+        if (/Android 4\.0/.test(ua) && (match = ua.match(/AppleWebKit\/(\d+)/)) && +match[1] <= 534) {
+            return false;
+        }
+        return true;
+    };
+
 
     /**
      * Selector defines set of elements with need to be scrolled ex. "#content > .post"
@@ -395,7 +404,7 @@
     $.fn.fluidContentScroller = function (options) {
         var $this = $(this),
             data = $this.data('fluidContentScroller');
-        if (!data) {
+        if (!data && isBrowserSupported()) {
             $this.data('fluidContentScroller', (new FluidContentScroller(this, options)));
         }
         return this;
