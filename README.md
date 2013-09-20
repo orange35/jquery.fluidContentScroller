@@ -77,7 +77,7 @@ It is also possible to modify defaults directly at $.fn.fluidContentScroller.def
 **container**               | Scrollable container for navigation<br>Type: *{undefined&#124;String&#124;HtmlElement&#124;jQuery}*<br>Default: `document.body`
 **autoWrap**                | Adds wrapper around container, can be used only when container is not `document.body`<br>Type: *{Boolean}*<br> Default: `true`
 **scrollSpeed**             | Duration of container scroll after click on navigation item<br>Type: *{Number}*<br>Default: 750
-**scrollEasing**            | Container scroll easing<br>Type: *{undefined&#124;Number}*<br>Default: `undefined`
+**scrollEasing**            | Container scroll easing<br>Type: *{undefined&#124;String}*<br>Default: `undefined`
 **onInit**                  | Called after plugin initialization and navigation build<br>Type: *{Function}*<br>Params: *{jQuery} target, {jQuery} topNav, {jQuery} bottomNav*<br>Default: `undefined`
 **nav.className**           | Class name that added to top and bottom navigation bars <br>Type: *{String}*<br>Default: `'cs-nav'`
 **nav.topClass**            | Class name of top navigation bar <br>Type: *{String}*<br>Default: `'cs-top'`

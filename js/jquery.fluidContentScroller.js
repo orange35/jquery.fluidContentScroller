@@ -413,7 +413,7 @@
         /** @type {Number} Duration of container scroll after click on navigation item */
         scrollSpeed: 750,
 
-        /** @type {undefined|Number} Container scroll easing */
+        /** @type {undefined|String} Container scroll easing */
         scrollEasing: undefined,
 
         /**
