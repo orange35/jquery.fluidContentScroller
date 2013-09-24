@@ -1,0 +1,32 @@
+{
+    "name": "fluidContentScroller",
+    "version": "1.0.0",
+    "title": "jQuery Fluid Content Scroller",
+    "author": {
+        "name": "Orange35",
+        "email": "plugins@orange35.com",
+        "url": "http://orange35.com/"
+    },
+    "licenses": [
+        {
+            "type": "Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License",
+            "url": "http://creativecommons.org/licenses/by-nc-sa/3.0/"
+        }
+    ],
+    "dependencies": {
+        "jquery": ">=1.4.2"
+    },
+
+    "description": "jQuery Fluid Сontent Scroller Plugin makes navigation through long item lists like news, events, blog posts, etc. smooth and easy. Plugin is represented with the tabbed navigation panel at the top and at the bottom of the page / list container allowing to instantly scroll up and down to a particular post on the list.",
+    "keywords": [
+        "navigation", 
+        "content", 
+        "jquery",
+        "effect"
+    ],
+    "homepage": "http://orange35.com/jquery-fluid-content-scroller",
+    "docs": "http://orange35.com/jquery-fluid-content-scroller",
+    "demo": "http://demo.orange35.com/jquery.fluidContentScroller/",
+    "download": "https://github.com/orange35/jquery.fluidContentScroller/archive/master.zip",
+    "bugs": "https://github.com/orange35/jquery.fluidContentScroller/issues"
+}
