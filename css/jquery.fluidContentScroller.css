@@ -1,7 +1,7 @@
 /*!
  * jquery.fluidContentScroller
  *
- * @version 1.0.0
+ * @version 1.0.1
  * @requires jQuery 1.4.2+
  * @copyright Orange35.com, 2013
  * @license Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported
