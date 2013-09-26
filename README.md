@@ -14,6 +14,20 @@ list.
 * Stable tag: 1.0.1
 * License: [Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License](http://creativecommons.org/licenses/by-nc-sa/3.0/) 
 
+## Product Features
+* Responsive design
+* Touch friendlyness
+* Smooth animation
+* jQuery 1.4.2+ or jQuery 2.x
+* Free for non-commercial use
+* Free updates
+* Unminified source
+* Cross-platform & cross-browser
+
+## Usage
+Plugin is free for non-commercial use. 
+For commercial use, choose one of the available purchasing license options on our [website](http://orange35.com/jquery-fluid-content-scroller).
+
 ## Installation
 1. Copy files to your website directory
 2. Make sure you have jQuery (see requirements above) loaded
@@ -98,6 +112,13 @@ It is also possible to modify defaults directly at $.fn.fluidContentScroller.def
 ## Changelog
 ### 1.0.0
 * Initial Public Release
+
+### 1.0.1
+* Added `fluidContentScroller.jquery.json` file
+
+### 1.0.2
+* Reformatted `LICENSE` file
+* small changes in README.md
 
 ## Bug Reporting/Feature Request
 Would like to report a bug or request a new feature? Feel free to [create a new issue](https://github.com/orange35/jquery.fluidContentScroller/issues) for that purpose.
