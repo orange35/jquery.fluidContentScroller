@@ -2,7 +2,7 @@
 
 ## Plugin Description 
 
-jQuery Fluid Сontent Scroller Plugin makes navigation through long item lists
+jQuery Fluid Content Scroller Plugin makes navigation through long item lists
 like news, events, blog posts, etc. smooth and easy. Plugin is represented with
 the tabbed navigation panel at the top and at the bottom of the page / list
 container allowing to instantly scroll up and down to a particular post on the
