@@ -11,7 +11,7 @@ list.
 * Contributor: [Orange35](http://orange35.com/ "Orange35 Web Development")
 * Requires: jQuery 1.4.2+ or jQuery 2.x
 * Tested up to: jQuery 1.10.2 and jQuery 2.0.3
-* Stable tag: 1.0.1
+* Stable tag: 1.0.2
 * License: [Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License](http://creativecommons.org/licenses/by-nc-sa/3.0/) 
 
 ## Product Features
