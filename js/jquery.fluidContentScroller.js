@@ -7,7 +7,7 @@
  * @license Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported
  * http://creativecommons.org/licenses/by-nc-sa/3.0/
  */
-!(function ($) {
+!(($ => {
     "use strict";
 
     var FluidContentScroller = function (element, options) {
@@ -46,7 +46,7 @@
     FluidContentScroller.prototype = {
         reAttr: /\[([a-z0-9_\-]+)\]/i,
 
-        init: function () {
+        init() {
             this.initNavigation();
 
             $(window).bind('resize.' + this.eventNS, this.proxy(this.onResize, this));
@@ -58,8 +58,15 @@
             return this;
         },
 
-        initNavigation: function () {
-            var i, c, title, info, $topItem, $bottomItem, onNavItemClick, $target;
+        initNavigation() {
+            var i;
+            var c;
+            var title;
+            var info;
+            var $topItem;
+            var $bottomItem;
+            var onNavItemClick;
+            var $target;
 
             this.$topNav = $('<ul />').addClass(this.options.nav.className).addClass(this.options.nav.topClass);
             this.$bottomNav = $('<ul />').addClass(this.options.nav.className).addClass(this.options.nav.bottomClass);
@@ -116,17 +123,19 @@
             return this;
         },
 
-        onResize: function () {
+        onResize() {
             if (this.resizeTimer) { clearTimeout(this.resizeTimer); }
             this.resizeTimer = setTimeout(this.proxy(this.refreshPositions, this), 100);
         },
 
-        refreshPositions: function () {
-            var i, c,
-                containerWidth = this.$container.get(0).clientWidth,
-                containerOffset = (window === this.$scrollContainer[0])
-                    ? 0
-                    : this.$scrollContainer.offset().top - this.$scrollContainer.scrollTop();
+        refreshPositions() {
+            var i;
+            var c;
+            var containerWidth = this.$container.get(0).clientWidth;
+
+            var containerOffset = (window === this.$scrollContainer[0])
+                ? 0
+                : this.$scrollContainer.offset().top - this.$scrollContainer.scrollTop();
 
             this.$topNav.css({width: containerWidth});
             this.$bottomNav.css({width: containerWidth});
@@ -138,8 +147,11 @@
             return this;
         },
 
-        clearNavItemTimer: function (toolbars, actions) {
-            var i, j, toolbar, action;
+        clearNavItemTimer(toolbars, actions) {
+            var i;
+            var j;
+            var toolbar;
+            var action;
             toolbars = toolbars || ['top', 'bottom'];
             actions = actions || ['show', 'hide'];
             toolbars = $.isArray(toolbars) ? toolbars : [toolbars];
@@ -156,25 +168,37 @@
             }
         },
 
-        onScroll: function () {
+        onScroll() {
             this.clearNavItemTimer();
             if (this.scrollTimer) { clearTimeout(this.scrollTimer); }
             this.scrollTimer = setTimeout(this.proxy(this.updateNavigation, this), 100);
         },
 
-        updateNavigation: function () {
-            var that = this,
-                viewTop, viewBottom,
-                maxTopWidth = this.$topNav.width(),
-                maxBottomWidth = this.$bottomNav.width(),
-                topWidth = 0, bottomWidth = 0,
-                topShow = [], topShowL = [], topShowR = [],
-                topHideL = [], topHideR = [],
-                bottomShow = [], bottomShowL = [], bottomShowR = [],
-                bottomHideL = [], bottomHideR = [],
-                topShowWidth = [], bottomShowWidth = [],
-                list, reverse,
-                i, c, info;
+        updateNavigation() {
+            var that = this;
+            var viewTop;
+            var viewBottom;
+            var maxTopWidth = this.$topNav.width();
+            var maxBottomWidth = this.$bottomNav.width();
+            var topWidth = 0;
+            var bottomWidth = 0;
+            var topShow = [];
+            var topShowL = [];
+            var topShowR = [];
+            var topHideL = [];
+            var topHideR = [];
+            var bottomShow = [];
+            var bottomShowL = [];
+            var bottomShowR = [];
+            var bottomHideL = [];
+            var bottomHideR = [];
+            var topShowWidth = [];
+            var bottomShowWidth = [];
+            var list;
+            var reverse;
+            var i;
+            var c;
+            var info;
 
             viewTop = this.$scrollContainer.scrollTop();
             viewBottom = viewTop
@@ -255,13 +279,13 @@
 
             // top nav bar animation
             $(topHideL).hide();
-            this.toggleNavItems(topHideR, false, function () {
+            this.toggleNavItems(topHideR, false, () => {
                 that.toggleNavItems(topShowL, true);
                 that.toggleNavItems(topShowR, true);
             });
 
             // bottom nav bar animation
-            this.toggleNavItems(bottomHideL, false, function () {
+            this.toggleNavItems(bottomHideL, false, () => {
                 $(bottomHideR).hide();
                 that.toggleNavItems(bottomShowL, true);
                 that.toggleNavItems(bottomShowR, true);
@@ -274,9 +298,9 @@
             return this;
         },
 
-        toggleNav: function (container, show) {
-            var effect = show ? this.options.nav.showEffect : this.options.nav.hideEffect,
-                effectFn = show ? container.show : container.hide;
+        toggleNav(container, show) {
+            var effect = show ? this.options.nav.showEffect : this.options.nav.hideEffect;
+            var effectFn = show ? container.show : container.hide;
 
             if (!$.isPlainObject(effect) && typeof effect !== 'string') {
                 effectFn = show ? container.fadeIn : container.fadeOut;
@@ -285,7 +309,7 @@
             effectFn.call(container, effect);
         },
 
-        toggleNavItems: function (items, show, callback) {
+        toggleNavItems(items, show, callback) {
             if (items.length) {
                 items = $(items).filter(show ? ':hidden' : ':visible').toArray();
                 this.toggleNavItem(items, show, this.options.navItem.duration, callback);
@@ -294,10 +318,11 @@
             }
         },
 
-        toggleNavItem: function (items, show, duration, callback) {
-            var item, toolbar,
-                action = show ? 'show' : 'hide',
-                effectFn = show ? this.options.navItem.showEffect : this.options.navItem.hideEffect;
+        toggleNavItem(items, show, duration, callback) {
+            var item;
+            var toolbar;
+            var action = show ? 'show' : 'hide';
+            var effectFn = show ? this.options.navItem.showEffect : this.options.navItem.hideEffect;
 
             items = items.slice(0);
             if ((item = items.shift())) {
@@ -316,25 +341,27 @@
             }
         },
 
-        getItemToolbarName: function (item) {
+        getItemToolbarName(item) {
             return $(item).parents('.' + this.options.nav.className + ':first')
                           .hasClass(this.options.nav.topClass) ? 'top' : 'bottom';
         },
 
-        onNavItemClick: function (e) {
+        onNavItemClick(e) {
             e.preventDefault();
-            var link = $(e.currentTarget),
-                index = parseInt(link.data('csIndex')),
-                $container, $target, position, positionOffset = 0, scrollTop = 0,
-                onComplete;
+            var link = $(e.currentTarget);
+            var index = parseInt(link.data('csIndex'));
+            var $container;
+            var $target;
+            var position;
+            var positionOffset = 0;
+            var scrollTop = 0;
+            var onComplete;
 
             if ('function' === typeof this.options.navItem.onBeforeClick) {
                 this.options.navItem.onBeforeClick.call(null, link, $(this.$target[index]));
             }
 
-            onComplete = ('function' === typeof this.options.navItem.onAfterClick) ? (function (fn, link, target) {
-                return function () { fn.call(null, link, target); };
-            })(this.options.navItem.onAfterClick, link, $(this.$target[index])) : undefined;
+            onComplete = ('function' === typeof this.options.navItem.onAfterClick) ? (((fn, link, target) => () => { fn.call(null, link, target); }))(this.options.navItem.onAfterClick, link, $(this.$target[index])) : undefined;
 
             if (index in this.$target) {
                 if ((window === this.$scrollContainer[0])) {
@@ -352,8 +379,9 @@
             }
         },
 
-        getInfo: function (index, $itemNode, info) {
-            var container, match;
+        getInfo(index, $itemNode, info) {
+            var container;
+            var match;
             if (undefined === info) {
                 return undefined;
             }
@@ -371,10 +399,10 @@
             return undefined;
         },
 
-        proxy: function (fn, context) {
-            var bind = Function.prototype.bind,
-                slice = Array.prototype.slice,
-                args;
+        proxy(fn, context) {
+            var bind = Function.prototype.bind;
+            var slice = Array.prototype.slice;
+            var args;
             if (fn.bind === bind && bind) {
                 return bind.apply(fn, slice.call(arguments, 1));
             }
@@ -392,8 +420,8 @@
      * @return {jQuery}
      */
     $.fn.fluidContentScroller = function (options) {
-        var $this = $(this),
-            data = $this.data('fluidContentScroller');
+        var $this = $(this);
+        var data = $this.data('fluidContentScroller');
         if (!data) {
             $this.data('fluidContentScroller', (new FluidContentScroller(this, options)));
         }
@@ -481,4 +509,4 @@
         }
     }
 
-})(jQuery);
+}))(jQuery);
